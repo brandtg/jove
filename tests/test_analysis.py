@@ -12,7 +12,7 @@ class TestAnalysis:
     @pytest.fixture(scope="class")
     def root(self):
         with tempfile.TemporaryDirectory() as tmp:
-            startanalysis(self.NAME, projectdir=tmp)
+            startanalysis(self.NAME, chroot=tmp)
             root = os.path.join(tmp, self.NAME)
             assert os.path.exists(root)
             yield root
@@ -22,7 +22,7 @@ class TestAnalysis:
             pathname = os.path.join(root, dirname)
             assert os.path.exists(pathname)
             assert os.path.isdir(pathname)
-        for filename in ["shell.sh", "code.py", "lib.py", "README.md"]:
+        for filename in ["shell.sh", "code.py", "libjove.py", "wip.py", "README.md"]:
             pathname = os.path.join(root, filename)
             assert os.path.exists(pathname)
             assert os.path.isfile(pathname)
@@ -35,7 +35,7 @@ class TestAnalysis:
     def test_lib_directories(self, root):
         found_data = False
         found_figures = False
-        with open(os.path.join(root, "lib.py")) as f:
+        with open(os.path.join(root, "libjove.py")) as f:
             for line in f:
                 line = line.strip()
                 if line == 'DIRNAME_DATA = "data"':
@@ -48,6 +48,12 @@ class TestAnalysis:
     def test_shell_executable(self, root):
         shellfile = os.path.join(root, "shell.sh")
         assert os.path.isfile(shellfile) and os.access(shellfile, os.X_OK)
+
+    def test_shell_codefiles(self, root):
+        shellfile = os.path.join(root, "shell.sh")
+        with open(shellfile) as f:
+            content = f.read()
+            assert "libjove.py code.py wip.py" in content
 
 
 def test_with_zettel_prefix():

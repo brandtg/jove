@@ -5,7 +5,7 @@ with open("README.md") as f:
 
 setup(
     name="jove",
-    version="0.0.3",
+    version="0.0.4",
     author="Greg Brandt",
     author_email="brandt.greg@protonmail.com",
     description="A terminal-focused alternative to Jupyter notebooks.",

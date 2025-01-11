@@ -1,4 +1,4 @@
 #!/bin/bash
 set -Eeuxo pipefail
 
-black jove
+black jove tests

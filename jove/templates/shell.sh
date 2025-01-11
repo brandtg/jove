@@ -11,5 +11,5 @@ fi
 conda activate
 
 # Run ipython shell initialized by lib.py and code.py
-cat lib.py code.py > .session.py
+cat libjove.py code.py wip.py > .session.py
 ipython -i .session.py

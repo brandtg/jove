@@ -5,7 +5,7 @@ A terminal-focused alternative to Jupyter notebooks.
 Jove works with [Anaconda](https://docs.anaconda.com/anaconda/install/), and assumes that your system has it
 installed. 
 
-Jove targets a middle ground between Jupyter Notebooks and iPython, providing enough structure to keep a data
+Jove targets a middle ground between Jupyter Notebooks and IPython, providing enough structure to keep a data
 analysis organized, without a complex multimedia JSON document. Instead, it provides a loose file-oriented analysis
 framework, which is intended as a starting point for an analysis to [evolve in complexity
 naturally](https://knowyourmeme.com/memes/pepe-silvia).
@@ -50,7 +50,7 @@ myproject/
     - `save_csv`: Writes a Pandas DataFrame as CSV in `data`
     - `save_fig`: Writes a Matplotlib figure as PNG in `figures`
 - `code.py`: Analysis-specific functions and code
-- `shell.sh`: Starts an iPython shell, and runs lib.py then code.py
+- `shell.sh`: Starts an IPython shell, and runs lib.py then code.py
 
 ## Example
 
@@ -66,7 +66,7 @@ Download some random CSV file
 wget https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/0e7a9b0a5d22642a06d3d5b9bcbad9890c8ee534/iris.csv -O data/iris.csv
 ```
 
-Run the following to start an iPython session
+Run the following to start an IPython session
 
 ```
 ./shell.sh
@@ -116,3 +116,4 @@ sepal_length, fig = get_sepal_length_stats(df)
 
 - [ ] Command to upgrade `lib.py`, `shell.sh` files in existing analysis repos
 - [ ] Helper to generate a markdown table (df.to_markdown() and append to README
+- [ ] Test lib.py in IPython https://www.peterbaumgartner.com/blog/testing-ipython-magics/
