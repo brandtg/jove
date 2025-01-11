@@ -1,7 +1,7 @@
 import tempfile
 import os
 import json
-from spyndle.workspace import newproject, newanalysis
+from jove.workspace import newproject, newanalysis
 from datetime import datetime
 
 
@@ -9,7 +9,7 @@ def test_workspace():
     with tempfile.TemporaryDirectory() as tmp:
         # Create new project
         newproject(tmp)
-        configfile = os.path.join(tmp, ".spyndle.json")
+        configfile = os.path.join(tmp, ".jove.json")
         assert os.path.exists(configfile)
         with open(configfile) as f:
             config = json.load(f)
@@ -52,7 +52,7 @@ def test_workspace_zettel():
     with tempfile.TemporaryDirectory() as tmp:
         # Create new project
         newproject(tmp, zettel=True)
-        configfile = os.path.join(tmp, ".spyndle.json")
+        configfile = os.path.join(tmp, ".jove.json")
         assert os.path.exists(configfile)
         with open(configfile) as f:
             config = json.load(f)

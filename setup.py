@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="spyndle",
+    name="jove",
     version="0.0.1",
     packages=find_packages(),
     install_requires=[
@@ -15,7 +15,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "spyndle = spyndle.workspace:main",
+            "jove = jove.workspace:main",
         ]
     },
     test_suite="tests",

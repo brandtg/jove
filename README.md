@@ -1,11 +1,11 @@
-# spyndle
+# jove
 
 A terminal-focused alternative to Jupyter notebooks.
 
-Spyndle works with [Anaconda](https://docs.anaconda.com/anaconda/install/), and assumes that your system has it
+Jove works with [Anaconda](https://docs.anaconda.com/anaconda/install/), and assumes that your system has it
 installed. 
 
-Spyndle targets a middle ground between Jupyter Notebooks and iPython, providing enough structure to keep a data
+Jove targets a middle ground between Jupyter Notebooks and iPython, providing enough structure to keep a data
 analysis organized, without a complex multimedia JSON document. Instead, it provides a loose file-oriented analysis
 framework, which is intended as a starting point for an analysis to [evolve in complexity
 naturally](https://knowyourmeme.com/memes/pepe-silvia).
@@ -25,14 +25,14 @@ Some other complimentary CLI tools include:
 Create a new project
 
 ```
-python -m spyndle.workspace newproject myproject
+python -m jove.workspace newproject myproject
 ```
 
 Create a new analysis
 
 ```
 cd myproject
-python -m spyndle.workspace newanalysis myanalysis
+python -m jove.workspace newanalysis myanalysis
 ```
 
 The analysis directory initializes a few key files and directories, which are intended to be modified as needed for each analysis:

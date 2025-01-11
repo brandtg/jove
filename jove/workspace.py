@@ -8,11 +8,11 @@ import re
 from datetime import datetime
 from dataclasses import dataclass
 
-logger = logging.getLogger("spyndle")
+logger = logging.getLogger("jove")
 
 DIRNAME_ANALYSIS_DATA = "data"
 DIRNAME_ANALYSIS_FIGURES = "figures"
-FILENAME_CONFIG = ".spyndle.json"
+FILENAME_CONFIG = ".jove.json"
 FILENAME_ANALYSIS_README = "README.md"
 FILENAME_ANALYSIS_CODE = "code.py"
 FILENAME_ANALYSIS_LIB = "lib.py"
@@ -20,7 +20,7 @@ FILENAME_ANALYSIS_SHELL = "shell.sh"
 
 
 @dataclass
-class SpyndleConfig:
+class Config:
     created_at: int = None
     updated_at: int = None
     zettel: bool = False
@@ -43,10 +43,10 @@ class SpyndleConfig:
             json.dump(self.__dict__, f)
 
 
-class SpyndleProject:
-    def __init__(self, projectdir: str = None, config: SpyndleConfig = None, **kwargs):
+class Project:
+    def __init__(self, projectdir: str = None, config: Config = None, **kwargs):
         self.projectdir = projectdir or os.getcwd()
-        self.config = config or SpyndleConfig()
+        self.config = config or Config()
 
     @property
     def configfile(self):
@@ -61,8 +61,8 @@ class SpyndleProject:
         return self
 
 
-class SpyndleAnalysis:
-    def __init__(self, project: SpyndleProject, name: str, **kwargs):
+class Analysis:
+    def __init__(self, project: Project, name: str, **kwargs):
         self.project = project
         self.name = name
         self.now = datetime.now().strftime("%Y%m%d%H%M")
@@ -120,14 +120,14 @@ class SpyndleAnalysis:
 
 
 def newproject(projectdir, zettel=False):
-    config = SpyndleConfig(zettel=zettel)
-    return SpyndleProject(projectdir=projectdir, config=config).create()
+    config = Config(zettel=zettel)
+    return Project(projectdir=projectdir, config=config).create()
 
 
 def newanalysis(name, projectdir=None):
-    config = SpyndleConfig.read(projectdir)
-    project = SpyndleProject(projectdir=projectdir, config=config)
-    return SpyndleAnalysis(project=project, name=name).create()
+    config = Config.read(projectdir)
+    project = Project(projectdir=projectdir, config=config)
+    return Analysis(project=project, name=name).create()
 
 
 def main():
