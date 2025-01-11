@@ -130,7 +130,7 @@ def newanalysis(name, projectdir=None):
     return SpyndleAnalysis(project=project, name=name).create()
 
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--debug", action="store_true")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -149,3 +149,7 @@ if __name__ == "__main__":
         newproject(args.projectdir, zettel=args.zettel)
     elif args.command == "newanalysis":
         newanalysis(args.name, projectdir=args.projectdir)
+
+
+if __name__ == "__main__":
+    main()

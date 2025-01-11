@@ -13,6 +13,11 @@ setup(
             "black==24.8.0",
         ],
     },
+    entry_points={
+        "console_scripts": [
+            "spyndle = spyndle.workspace:main",
+        ]
+    },
     test_suite="tests",
     include_package_data=True,
 )

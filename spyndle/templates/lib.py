@@ -19,7 +19,7 @@ def save_csv(df, prefix=None, filename=None, *args, **kwargs):
     if prefix and filename:
         raise ValueError("Only provide one of prefix or filename")
     elif not filename:
-        filename = find_next_id(DIRNAME_DATA, prefix or "data-", ".csv")
+        filename = find_next_id(DIRNAME_DATA, prefix or "table-", ".csv")
     df.to_csv(os.path.join(DIRNAME_DATA, filename), *args, **kwargs)
 
 
