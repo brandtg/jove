@@ -5,7 +5,7 @@ with open("README.md") as f:
 
 setup(
     name="jove",
-    version="0.0.2",
+    version="0.0.3",
     author="Greg Brandt",
     author_email="brandt.greg@protonmail.com",
     description="A terminal-focused alternative to Jupyter notebooks.",
@@ -24,7 +24,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "jove = jove.workspace:main",
+            "jove = jove.analysis:main",
         ]
     },
     test_suite="tests",

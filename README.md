@@ -22,17 +22,10 @@ Some other complimentary CLI tools include:
 
 ## Usage
 
-Create a new project
+Create a new analysis in the current directory
 
 ```
-python -m jove.workspace newproject myproject
-```
-
-Create a new analysis
-
-```
-cd myproject
-python -m jove.workspace newanalysis myanalysis
+jove start myanalysis
 ```
 
 The analysis directory initializes a few key files and directories, which are intended to be modified as needed for each analysis:
