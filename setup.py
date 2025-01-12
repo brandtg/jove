@@ -20,6 +20,7 @@ setup(
         "dev": [
             "pytest==8.3.3",
             "black==24.8.0",
+            "ipython==8.25.0",
         ],
     },
     entry_points={
