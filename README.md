@@ -55,7 +55,8 @@ myproject/
 - `lib.py`: Helper functions for performing analysis
     - `save_csv`: Writes a Pandas DataFrame as CSV in `data`
     - `save_fig`: Writes a Matplotlib figure as PNG in `figures`
-- `code.py`: Analysis-specific functions and code
+- `code.py`: Refined analysis-specific functions and code
+- `wip.py`: "Work-in-progress" code that should later be refined or deleted
 - `shell.sh`: Starts an IPython shell, and runs lib.py then code.py
 
 ## Example
