@@ -22,6 +22,12 @@ Some other complimentary CLI tools include:
 
 ## Usage
 
+Install
+
+```
+python -m pip install jove
+```
+
 Create a new analysis in the current directory
 
 ```
@@ -111,9 +117,3 @@ get the results again
 df = pd.read_csv("data/iris.csv")
 sepal_length, fig = get_sepal_length_stats(df)
 ```
-
-# TODOs
-
-- [ ] Command to upgrade `lib.py`, `shell.sh` files in existing analysis repos
-- [ ] Helper to generate a markdown table (df.to_markdown() and append to README
-- [ ] Test lib.py in IPython https://www.peterbaumgartner.com/blog/testing-ipython-magics/
