@@ -43,7 +43,7 @@ myproject/
     ├── code.py
     ├── data
     ├── figures
-    ├── lib.py
+    ├── libjove.py
     ├── README.md
     └── shell.sh
 ```
@@ -52,12 +52,12 @@ myproject/
     - Named README.md so GitHub auto-renders when viewing the root directory
 - `data`: Stores analysis datasets (CSVs, JSON, etc.)
 - `figures`: Stores charts and figures
-- `lib.py`: Helper functions for performing analysis
+- `libjove.py`: Helper functions for performing analysis
     - `save_csv`: Writes a Pandas DataFrame as CSV in `data`
     - `save_fig`: Writes a Matplotlib figure as PNG in `figures`
 - `code.py`: Refined analysis-specific functions and code
 - `wip.py`: "Work-in-progress" code that should later be refined or deleted
-- `shell.sh`: Starts an IPython shell, and runs lib.py then code.py
+- `shell.sh`: Starts an IPython shell, and runs code files
 
 ## Example
 
