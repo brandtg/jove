@@ -48,7 +48,7 @@ def save_fig(fig, prefix=None, filename=None, *args, **kwargs):
     fig.savefig(os.path.join(DIRNAME_FIGURES, filename), *args, **kwargs)
 
 
-def save_wip(filename="wip.py", session=0, start=1, stop=None, raw=True):
+def save_wip(filename="wip.py", session=0, start=1, stop=None, raw=True, reset=True):
     """
     Appends IPython commands to a work-in-progress file for further refinement.
 
@@ -71,3 +71,5 @@ def save_wip(filename="wip.py", session=0, start=1, stop=None, raw=True):
             input_line = elt["input_line"]
             if "save_wip" not in input_line:
                 f.write(input_line + "\n")
+    if reset:
+        history_manager.reset()
