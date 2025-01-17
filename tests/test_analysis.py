@@ -22,7 +22,7 @@ class TestAnalysis:
             pathname = os.path.join(root, dirname)
             assert os.path.exists(pathname)
             assert os.path.isdir(pathname)
-        for filename in ["shell.sh", "code.py", "libjove.py", "wip.py", "README.md"]:
+        for filename in ["shell.sh", "code.py", "libjove.py", "README.md"]:
             pathname = os.path.join(root, filename)
             assert os.path.exists(pathname)
             assert os.path.isfile(pathname)
@@ -53,7 +53,7 @@ class TestAnalysis:
         shellfile = os.path.join(root, "shell.sh")
         with open(shellfile) as f:
             content = f.read()
-            assert "libjove.py code.py wip.py" in content
+            assert "libjove.py code.py" in content
 
 
 def test_with_zettel_prefix():

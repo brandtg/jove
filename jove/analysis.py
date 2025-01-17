@@ -13,7 +13,6 @@ class Analysis:
     DIRNAME_FIGURES = "figures"
     FILENAME_README = "README.md"
     FILENAME_CODE = "code.py"
-    FILENAME_WIP = "wip.py"
     FILENAME_LIB = "libjove.py"
     FILENAME_SHELL = "shell.sh"
 
@@ -62,7 +61,6 @@ class Analysis:
             dirname_figures=self.DIRNAME_FIGURES,
         )
         self.add_template(self.FILENAME_CODE)
-        self.add_template(self.FILENAME_WIP)
         self.add_template(self.FILENAME_SHELL, executable=True)
         return self
 

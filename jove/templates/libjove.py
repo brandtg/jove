@@ -48,11 +48,9 @@ def save_fig(fig, prefix=None, filename=None, *args, **kwargs):
     fig.savefig(os.path.join(DIRNAME_FIGURES, filename), *args, **kwargs)
 
 
-def save_wip(filename="wip.py", session=0, start=1, stop=None, raw=True, reset=True):
+def save_wip(filename="code.py", session=0, start=1, stop=None, raw=True, reset=True):
     """
     Appends IPython commands to a work-in-progress file for further refinement.
-
-    Note that the ``wip.py`` file is sourced when ``shell.sh`` starts.
 
     :param filename: Append work-in-progress code to this file.
     :seealso: :func:``IPython.core.history.HistoryManager.get_range``
