@@ -56,7 +56,6 @@ myproject/
     - `save_csv`: Writes a Pandas DataFrame as CSV in `data`
     - `save_fig`: Writes a Matplotlib figure as PNG in `figures`
 - `code.py`: Refined analysis-specific functions and code
-- `wip.py`: "Work-in-progress" code that should later be refined or deleted
 - `shell.sh`: Starts an IPython shell, and runs code files
 
 ## Example
@@ -105,13 +104,13 @@ save_fig(ax.figure)
 The idea is to iteratively build out code in addition to insights, so after a bit of exploration, it's a good idea to
 copy these commands into `code.py` as a new utility function. 
 
-We can use the `save_wip()` helper function to first dump the session history into the `wip.py` file, to avoid copy/paste.
+We can use the `save_wip()` helper function to first dump the session history into the `code.py` file, to avoid copy/paste.
 
 ```python
 save_wip()
 ```
 
-The `wip.py` file should now look something like this
+The `code.py` file should now look something like this
 
 ```python
 # Add code that is a work in progress here, before promoting to code.py
@@ -123,8 +122,8 @@ ax = df.sepal_length.hist()
 save_fig(ax.figure)
 ```
 
-This is super messy, but we can quickly refactor it into something more usable. Open `wip.py` and `code.py` in your
-favorite editor (e.g. `nvim -o wip.py code.py`), cut the code from `wip.py` into `code.py`, and refactor that into a nice function:
+This is super messy, but we can quickly refactor it into something more usable. Open `code.py` in your favorite editor,
+and refactor that into a nice function:
 
 ```python
 def get_sepal_length_stats(df):
