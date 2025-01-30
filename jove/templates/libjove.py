@@ -71,3 +71,13 @@ def save_wip(filename="code.py", session=0, start=1, stop=None, raw=True, reset=
                 f.write(input_line + "\n")
     if reset:
         history_manager.reset()
+
+
+def reset_history():
+    """
+    Resets IPython history.
+    """
+    from IPython import get_ipython
+
+    history_manager = get_ipython().history_manager
+    history_manager.reset()
