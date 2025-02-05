@@ -40,7 +40,7 @@ The analysis directory initializes a few key files and directories, which are in
 $ tree myproject/
 myproject/
 └── myanalysis
-    ├── code.py
+    ├── jove.py
     ├── data
     ├── figures
     ├── libjove.py
@@ -55,7 +55,7 @@ myproject/
 - `libjove.py`: Helper functions for performing analysis
     - `save_csv`: Writes a Pandas DataFrame as CSV in `data`
     - `save_fig`: Writes a Matplotlib figure as PNG in `figures`
-- `code.py`: Refined analysis-specific functions and code
+- `jove.py`: Refined analysis-specific functions and code
 - `shell.sh`: Starts an IPython shell, and runs code files
 
 ## Example
@@ -102,18 +102,18 @@ save_fig(ax.figure)
 ```
 
 The idea is to iteratively build out code in addition to insights, so after a bit of exploration, it's a good idea to
-copy these commands into `code.py` as a new utility function. 
+copy these commands into `jove.py` as a new utility function. 
 
-We can use the `save_wip()` helper function to first dump the session history into the `code.py` file, to avoid copy/paste.
+We can use the `save_wip()` helper function to first dump the session history into the `jove.py` file, to avoid copy/paste.
 
 ```python
 save_wip()
 ```
 
-The `code.py` file should now look something like this
+The `jove.py` file should now look something like this
 
 ```python
-# Add code that is a work in progress here, before promoting to code.py
+# Add code that is a work in progress here, before promoting to jove.py
 df = pd.read_csv("data/iris.csv")
 sepal_length = df.sepal_length.describe()
 save_csv(sepal_length)
@@ -122,7 +122,7 @@ ax = df.sepal_length.hist()
 save_fig(ax.figure)
 ```
 
-This is super messy, but we can quickly refactor it into something more usable. Open `code.py` in your favorite editor,
+This is super messy, but we can quickly refactor it into something more usable. Open `jove.py` in your favorite editor,
 and refactor that into a nice function:
 
 ```python
@@ -132,7 +132,7 @@ def get_sepal_length_stats(df):
     return sepal_length, ax.figure  # Return the data and figure, for repeatability
 ```
 
-Now, close the shell and re-open it, or execute `%run ./code.py` in your current shell, then use the utility method to
+Now, close the shell and re-open it, or execute `%run ./jove.py` in your current shell, then use the utility method to
 get the results again
 
 ```python

@@ -12,7 +12,7 @@ class Analysis:
     DIRNAME_DATA = "data"
     DIRNAME_FIGURES = "figures"
     FILENAME_README = "README.md"
-    FILENAME_CODE = "code.py"
+    FILENAME_CODE = "jove.py"
     FILENAME_LIB = "libjove.py"
     FILENAME_SHELL = "shell.sh"
 
